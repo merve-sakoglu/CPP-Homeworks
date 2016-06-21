@@ -34,13 +34,13 @@ int main(){
 
 	if((size%2) != 0){
 
-        cout << "INVALID VALUE!!!\n" ;
+		cout << "INVALID VALUE!!!\n" ;
 		
-	while((size%2) != 0){
+		while((size%2) != 0){
 	
-		cout << "Tahta boyutunu giriniz\n" ;
-		cin >> size;
-	}
+			cout << "Tahta boyutunu giriniz\n" ;
+			cin >> size;
+		}
         }
 	initialBoard( board, size);
 	
