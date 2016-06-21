@@ -1,13 +1,17 @@
-/********************************
+/************************************/
 *	CSE 241 HW01                *
 *	MERVE SAKOGLU               *
 *	121044055                   *
 *	                            *
-*                               *
-********************************/
+*                                   *
+/************************************/
+
 #include <iostream>
+
 using namespace std;
+
 int const MAXSIZE=20;
+
 void initialBoard(char board[][MAXSIZE],int size);
 int translateLetter(char letter);
 int makeMove(char board[][MAXSIZE],int number,int letterNumber,char X,char O);
@@ -16,6 +20,7 @@ void computerMove(char board[][MAXSIZE]);
 int finished(char board[MAXSIZE][MAXSIZE]);
 void winner(char board[MAXSIZE][MAXSIZE]);
 void printBoard(char board[][MAXSIZE]);
+
 int main(){
 	
 	int size,letterNumber;
@@ -31,24 +36,28 @@ int main(){
 
         cout << "INVALID VALUE!!!\n" ;
 		
-		while((size%2) != 0){
-			cout << "Tahta boyutunu giriniz\n" ;
-			cin >> size;
-		}
-    }
+	while((size%2) != 0){
+	
+		cout << "Tahta boyutunu giriniz\n" ;
+		cin >> size;
+	}
+        }
 	initialBoard( board, size);
+	
 	do{
+	
 		 cout << "Hangi hamleyi yapmak istiyorsunuz\n";
-	     cin >> number;
-	     cin >> letter;
-         letterNumber = translateLetter(letter);
-         makeMove(board, (number+(MAXSIZE-size)/2)-1,(letterNumber+(MAXSIZE-size)/2)-1,'X','O');
-    	 printBoard( board);
-	     computerMove( board);
-         printBoard( board);
-         finish = finished( board);
+	         cin >> number;
+	         cin >> letter;
+        	 letterNumber = translateLetter(letter);
+         	 makeMove(board, (number+(MAXSIZE-size)/2)-1,(letterNumber+(MAXSIZE-size)/2)-1,'X','O');
+    		 printBoard( board);
+	         computerMove( board);
+         	 printBoard( board);
+         	 finish = finished( board);
 	   	 winner( board);
-   }while(finish==1); /*tahtada bos yer oldugu surece oynar*/
+	   	 
+        }while(finish==1); /*tahtada bos yer oldugu surece oynar*/
    
 	return 0;
 }
